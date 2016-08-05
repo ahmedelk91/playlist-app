@@ -7,7 +7,8 @@ class CreateSongs < ActiveRecord::Migration[5.0]
       t.integer :year
       t.string :img_url
       t.string :song_url
-      t.references :playlist
+      t.references :playlist, foreign_key: true
+      
       t.timestamps
     end
   end

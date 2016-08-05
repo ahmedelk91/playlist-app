@@ -1,22 +1,85 @@
 <style>
-  body {
-    background-image: url('<%= @playlist.img_url %>');
-    background-size: cover;
-  }
+body {
+  background-image: url('<%= @playlist.img_url %>');
+  background-size: cover;
+}
 </style>
 <div>
-<p>
-  <strong>Playlist:</strong>
-  <%= @playlist.title %>
-</p>
+  <p>
+    <strong>Playlist:</strong>
+    <%= @playlist.title %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @playlist.description %>
-</p>
-<p>
-  <%= link_to 'Back', playlists_path %>
-  <%= link_to 'Edit', edit_playlist_path %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @playlist.description %>
+  </p>
+
+  <h2>Songs</h2>
+
+  <% @playlist.songs.each do |song| %>
+  <p>
+    <strong>Title:</strong>
+    <%= song.title %>
+  </p>
+
+  <p>
+    <strong>Artist:</strong>
+    <%= song.artist %>
+  </p>
+
+  <p>
+    <strong>Album:</strong>
+    <%= song.album %>
+  </p>
+
+  <p>
+    <strong>Year:</strong>
+    <%= song.year %>
+  </p>
+
+
+<% end %>
+
+  <h2>Add a Song:</h2>
+  <%= form_for([@playlist, @playlist.songs.build]) do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :artist %><br>
+    <%= f.text_field :artist %>
+  </p>
+
+  <p>
+    <%= f.label :album %><br>
+    <%= f.text_field :album %>
+  </p>
+  <p>
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </p>
+
+  <p>
+    <%= f.label :img_url %><br>
+    <%= f.text_field :img_url %>
+  </p>
+
+  <p>
+    <%= f.label :song_url %><br>
+    <%= f.text_field :song_url %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
+
+  <p>
+    <%= link_to 'Back', playlists_path %>
+    <%= link_to 'Edit', edit_playlist_path %>
+  </p>
 </div>
 </body>

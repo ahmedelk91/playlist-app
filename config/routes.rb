@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-resources :playlists
+resources :playlists do
+  resources :songs
+end
 
 root 'welcome#index'
 end
