@@ -1,0 +1,19 @@
+<style>
+  body {
+    background-image: url('<%= @playlist.img_url %>');
+    background-size: cover;
+  }
+</style>
+<div>
+<p>
+  <strong>Playlist:</strong>
+  <%= @playlist.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @playlist.description %>
+  <%= link_to 'Back', playlists_path %>
+</p>
+</div>
+</body>
