@@ -8,6 +8,9 @@
     <a href="/playlists/<%= playlist.id %>">
       <%= playlist.title %> <br>
       <%= link_to 'Edit', edit_playlist_path(playlist) %>
+      <%= link_to 'Delete', playlist_path(playlist),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
     </a>
   </li>
   <% end %>
