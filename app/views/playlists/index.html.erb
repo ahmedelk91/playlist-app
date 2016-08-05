@@ -6,7 +6,8 @@
   <% @playlists.each do |playlist| %>
   <li>
     <a href="/playlists/<%= playlist.id %>">
-      <%= playlist.title %>
+      <%= playlist.title %> <br>
+      <%= link_to 'Edit', edit_playlist_path(playlist) %>
     </a>
   </li>
   <% end %>
