@@ -36,4 +36,5 @@ ActiveRecord::Schema.define(version: 20160803213650) do
     t.index ["playlist_id"], name: "index_songs_on_playlist_id", using: :btree
   end
 
+  add_foreign_key "songs", "playlists"
 end
