@@ -5,6 +5,7 @@ class CreatePlaylists < ActiveRecord::Migration[5.0]
       t.string :description
       t.string :img_url
       t.timestamps
+      # lookin good
     end
   end
 end
